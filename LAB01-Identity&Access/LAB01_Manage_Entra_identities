@@ -9,37 +9,55 @@ Előfeltételek:
 
 Labor scenario:
 
-A vállalatod egy új tesztkörnyezet épít a bevezetésre szánt új alkalmazásoknak és szolgáltatásoknak. Néhány mérnököt felvettek arra a célra, hogy
-menedzseljék ezt a labor környezetet, beleértve a virtuális gépeket is.
+A vállalatod egy új tesztkörnyezet épít a bevezetésre szánt új alkalmazásoknak és szolgáltatásoknak. 
+Néhány mérnököt felvettek arra a célra, hogy menedzseljék ezt a labor környezetet, beleértve a virtuális gépeket is.
+
 Ahhoz, hogy a mérnökök autentikálni tudjanak az Entra ID-ba, azt a feladatot osztották ki Neked, hogy hozz létre nekik felhasználói fiókokat és csoportokat.
 Az adminisztratív terhek csökkentése érdekében a csoporttagságnak automatikus módon kell frissülnie a munkakör alapján.
-Továbbá a megnövekedett kibertámadások miatt a szervezet szeretné bevezetni a többlépcsős hitelesítést minden felhasználónak, illetve szeretné szűrni a hozzáférést a vállalat által használt Microsoft 365 szolgáltatásokhoz.
+
+Továbbá a megnövekedett kibertámadások miatt a szervezet szeretné bevezetni a többlépcsős hitelesítést minden felhasználónak,
+illetve szeretné szabályozni, valamint biztonságosabbá tenni a hozzáférést a vállalat által használt Microsoft 365 szolgáltatásokhoz.
+
 Te, mint a szervezet globális adminisztrátora azt a feladatot kaptad, hogy a kérést Feltételes hozzáférési szabályok bevezetésével valósítsd meg.
-A szabályoknak érvényesnek kell lennie, minden felhasználóra, az Exchange Online, Sharepoint Online és Teams alkalmazásokra, valamint csak modern autentikációt használó kliensekről, illetve csak Windows platformról férhetnek hozzá a felhasználók, miután visszaigazolták magukat MFA-val.
+
+A megnövekedett IT helpdesk ticket-ek nagy része felhasználói jelszóváltoztatással volt kapcsolatos, ezért azt a feladatot kaptad, hogy vezesd be
+az SSPR-t.
 
 1. feladat
 
 1. Lépés: Bejelentkezés az Azure portalra
 
-Nyisd meg a böngésződet és látogass el a következő webcímre: https://portal.azure.com. Ha még nem vagy bejelentkezve, írd be a Microsoft-fiókod adatait, hogy beléphess.
+Nyisd meg a böngésződet és látogass el a következő webcímre: https://portal.azure.com.
+
+Ha még nem vagy bejelentkezve, írd be a Microsoft-fiókod adatait, hogy beléphess.
 
 2. Lépés: A Microsoft Entra ID keresése
 
-A kezdőoldalon használd a keresőmezőt a Microsoft Entra ID megtalálásához. A Microsoft Entra ID az Azure felhőalapú identitás- és hozzáférés-kezelési megoldása. Tölts el néhány percet azzal, hogy megismerkedj a bal oldali panelen felsorolt néhány funkcióval.
+A kezdőoldalon használd a keresőmezőt a Microsoft Entra ID megtalálásához.
+
+A Microsoft Entra ID az Azure felhőalapú identitás- és hozzáférés-kezelési megoldása.
+
+Tölts el néhány percet azzal, hogy megismerkedj a bal oldali panelen felsorolt néhány funkcióval.
 3. Lépés: Áttekintés lap és bérlők kezelése
 
 Válaszd ki az Áttekintés (Overview) lapot, majd a Bérlők kezelése (Manage tenants) fület.
 4. Lépés: Licencelés
 
-Térj vissza az Entra ID oldalra és válaszd a Licencelés (Licenses) lehetőséget. Innen megvásárolhatod a licencet, kezelheted a meglévő licenceket, és hozzárendelheted őket felhasználókhoz és csoportokhoz. Válaszd a Licencelt funkciók (Licensed features) opciót, hogy lásd, mi áll rendelkezésre.
+Térj vissza az Entra ID oldalra és válaszd a Licencelés (Licenses) lehetőséget.
+
+Innen megvásárolhatod a licencet, kezelheted a meglévő licenceket, és hozzárendelheted őket felhasználókhoz és csoportokhoz.
+
+Válaszd a Licencelt funkciók (Licensed features) opciót, hogy lásd, mi áll rendelkezésre.
 
 5. Lépés: Új felhasználó létrehozása
 
-Válaszd a Felhasználók (Users) menüpontot, majd az Új felhasználó (New user) legördülő menüben válaszd a "Create new user" (Új felhasználó létrehozása) lehetőséget.
+Válaszd a Felhasználók (Users) menüpontot, majd az Új felhasználó (New user) legördülő menüben 
+válaszd a "Create new user" (Új felhasználó létrehozása) lehetőséget.
 
 6. Lépés: Új felhasználó létrehozása a következő beállításokkal
 
-Hozz létre egy új felhasználót az alábbi beállításokkal (a többit hagyd alapértelmezettek szerint). A Tulajdonságok (Properties) fülön vedd észre, hogy milyen típusú információkat lehet felvenni a felhasználói fiókba.
+Hozz létre egy új felhasználót az alábbi beállításokkal (a többit hagyd alapértelmezettek szerint).
+A Tulajdonságok (Properties) fülön vedd észre, hogy milyen típusú információkat lehet felvenni a felhasználói fiókba.
 
     Felhasználó fő neve (User principal name): az104-user1
     Megjelenített név (Display name): az104-user1
@@ -57,7 +75,8 @@ Frissítsd az oldalt, és ellenőrizd, hogy az új felhasználó létrejött-e.
 
 8. Lépés: Külső felhasználó meghívása
 
-Kattints a "Felhasználók" (Users) menüpontra, majd a "Új felhasználó" (New user) legördülő menüben válaszd a "Külső felhasználó meghívása" (Invite an external user) lehetőséget.
+Kattints a "Felhasználók" (Users) menüpontra, majd a "Új felhasználó" (New user) legördülő menüben
+válaszd a "Külső felhasználó meghívása" (Invite an external user) lehetőséget.
 
 9. Lépés: Külső felhasználó adatainak megadása
 
@@ -89,32 +108,157 @@ Frissítsd az oldalt, és ellenőrizd, hogy a meghívott felhasználó sikeresen
 1. Lépés: Csoportok keresése és kiválasztása
 
 Nyisd meg az Azure portált, és a keresőmező segítségével keress rá a "Csoportok" (Groups) lehetőségre, majd válaszd ki azt.
+
 2. Lépés: Csoportbeállítások megismerése
 
-Szánj egy percet arra, hogy megismerkedj a bal oldali panelen található csoportbeállításokkal. Itt tudsz például élettartamot konfigurálni a csoportok számára, vagy megadni névadási szabályokat, mint például tiltott szavakat vagy előtagokat, utótagokat a csoportnevekhez.
+Szánj egy percet arra, hogy megismerkedj a bal oldali panelen található csoportbeállításokkal.
+
+Itt tudsz például élettartamot konfigurálni a csoportok számára, vagy megadni névadási szabályokat, 
+mint például tiltott szavakat vagy előtagokat, utótagokat a csoportnevekhez.
+
 3. Lépés: Új csoport létrehozása
 
 A "Minden csoport" (All groups) panelen válaszd a "+ Új csoport" (+ New group) lehetőséget, hogy létrehozz egy új csoportot.
+
 Csoport beállításai
 
     Csoport típusa (Group type): Biztonsági (Security)
     Csoport neve (Group name): IT Lab Administrators
     Csoport leírása (Group description): Olyan adminisztrátorok, akik az IT laboratóriumot kezelik
     Tagság típusa (Membership type): Kijelölt (Assigned)
-        Megjegyzés: Az Entra ID Premium P1 vagy P2 licenc szükséges a dinamikus tagsághoz. Ha más tagsági típusok is elérhetők, azok a legördülő menüben jelennek meg.
+
+    !!!Megjegyzés: Az Entra ID Premium P1 vagy P2 licenc szükséges a dinamikus tagsághoz. Ha más tagsági típusok is elérhetők, azok a legördülő menüben jelennek meg.
 
 4. Lépés: Tulajdonosok kiválasztása
 
-Válaszd a "Nincsenek tulajdonosok kiválasztva" (No owners selected) lehetőséget. A "Tulajdonosok hozzáadása" (Add owners) oldalon keress rá és válaszd ki magad mint tulajdonos. Több tulajdonost is hozzáadhatsz.
+Válaszd a "Nincsenek tulajdonosok kiválasztva" (No owners selected) lehetőséget. A "Tulajdonosok hozzáadása" (Add owners) oldalon keress rá
+és válaszd ki magad mint tulajdonos. Több tulajdonost is hozzáadhatsz.
+
 5. Lépés: Tagok kiválasztása
 
-Válaszd a "Nincsenek tagok kiválasztva" (No members selected) lehetőséget. A "Tagok hozzáadása" (Add members) panelen keress rá és válaszd ki az az104-user1 felhasználót és a meghívott vendégfelhasználót. Add hozzá mindkettőjüket a csoporthoz.
+Válaszd a "Nincsenek tagok kiválasztva" (No members selected) lehetőséget. A "Tagok hozzáadása" (Add members) panelen keress rá 
+és válaszd ki az az104-user1 felhasználót és a meghívott vendégfelhasználót. Add hozzá mindkettőjüket a csoporthoz.
+
 6. Lépés: Csoport létrehozása
 
 Válaszd a "Létrehozás" (Create) lehetőséget a csoport létrehozásához.
+
 7. Lépés: Csoport létrejöttének ellenőrzése
 
 Frissítsd az oldalt, hogy megbizonyosodj arról, a csoport sikeresen létrejött-e.
+
 8. Lépés: Tagok és tulajdonosok információinak áttekintése
 
 Válaszd ki az újonnan létrehozott csoportot, és tekintsd meg a Tagok (Members) és Tulajdonosok (Owners) információit.
+
+3. feladat
+
+1. Lépés: Entra ID-ban való bejelentkezés
+
+Nyisd meg a Microsoft Azure portált, és jelentkezz be a szervezet globális adminisztrátori fiókjával.
+
+2. Lépés: Feltételes hozzáférés kiválasztása
+
+A bal oldali menüsávból válaszd az "Microsoft Entra ID" lehetőséget, majd a megjelenő menüben görgess le a "Biztonság" (Security) szekcióig,
+és kattints a "Feltételes hozzáférés" (Conditional Access) pontra.
+
+3. Lépés: Új szabály létrehozása
+
+A "Feltételes hozzáférés" oldalon válaszd a "+ Új szabály" (+ New policy) lehetőséget.
+
+4. Lépés: Szabály konfigurálása
+
+Adj nevet a szabálynak, például "Modern Auth és MFA Windows-on".
+
+Felhasználók és csoportok kiválasztása
+
+    Válaszd ki a "Felhasználók és csoportok" (Users and groups) szekciót.
+
+    Válaszd a "Minden felhasználó" (All users) opciót.
+
+Alkalmazások kiválasztása
+
+    Menj a "Felhőalkalmazások vagy -műveletek" (Cloud apps or actions) szekcióba.
+
+    Válaszd az "Alkalmazások kijelölése" (Select apps) opciót, majd válaszd ki az Exchange Online, SharePoint Online és Teams alkalmazásokat.
+
+Feltételek beállítása
+
+    Válaszd a "Feltételek" (Conditions) menüpontot.
+
+    Az "Alkalmazott eszközök" (Device platforms) opció alatt válaszd ki a "Minden eszközplatform kijelölése" (Select device platforms) lehetőséget,
+    majd válaszd a "Windows" opciót.
+
+    Az "Ügyfélalkalmazások" (Client apps) szekcióban válaszd ki, hogy a szabály csak a modern autentikációt használó alkalmazásokra vonatkozzon.
+
+Hozzáférési vezérlés beállítása
+
+    A "Hozzáférési vezérlés" (Grant) szekcióban válaszd a "Hozzáférést enged" (Grant access) lehetőséget,
+    és pipáld ki a "Többtényezős hitelesítés szükséges" (Require multi-factor authentication) opciót.
+
+5. Lépés: Szabály engedélyezése és mentése
+
+    Ellenőrizd a szabály beállításait, hogy minden szükséges konfiguráció megfelelő-e.
+
+    Állítsd az "Engedélyezés" (Enable) kapcsolót az "Igen" pozícióba, hogy aktiválódjon a szabály.
+
+    Kattints a "Mentés" (Save) gombra a szabály mentéséhez.
+
+4. feladat
+
+1. Lépés: Megbízható helyek beállítása
+
+    A Microsoft Entra kezdőlapján válaszd a "Biztonság" (Security) > "Feltételes hozzáférés" (Conditional Access) opciót.
+
+    A "Névadási helyek" (Named locations) menüpont alatt adj hozzá egy új helyet, amit megbízhatónak jelölsz, például az irodád címét.
+
+    Ehhez szükséges lesz a publikus IP-cím megadása.
+
+2. Lépés: Feltételes hozzáférési szabály létrehozása
+
+    A "Feltételes hozzáférés" (Conditional Access) menüpontban válaszd a "Szabályok" (Policies) részt,
+    majd kattints a "+ Szabály létrehozása" (New policy) gombra.
+
+    Nevezd el a szabályt úgy, hogy tükrözze a célját, például "M365 Admin Portál hozzáférés korlátozása".
+
+    A "Felhasználók és csoportok" (Users and groups) résznél válaszd ki az előző lépésekben létrehozott csoportot.
+
+    Az "Alkalmazások" (Cloud apps) résznél válaszd ki a "Microsoft 365 admin portál" lehetőséget.
+
+    A "Feltételek" (Conditions) menüpontban állítsd be, hogy a szabály csak a "Nem megbízható helyekről" (Any location)
+    történő hozzáféréseket érintse, kivéve a megbízható helyként bejelölt irodát.
+
+    A "Hozzáférés vezérlése" (Grant) résznél válaszd a "Hozzáférés megtagadása" (Block access) opciót.
+
+    Mentsd a szabályt.
+
+5. feladat
+
+1. Lépés: SSPR beállításainak megkeresése
+
+    A Microsoft Entra kezdőlapján válassza a "Biztonság", majd az "Identitásvédelem" és végül 
+    az "Önálló szolgáltatású jelszó visszaállítás" (Self-Service Password Reset) lehetőséget.
+
+    Itt található az összes beállítás és opció az SSPR konfigurálásához.
+
+2. Lépés: Specifikus csoport kiválasztása
+
+    Az SSPR oldalon válassza ki a "Csoport kiválasztása" opciót az "SSPR kiknek érhető el" (Who can use SSPR) szakaszban.
+
+    Itt adja meg a korábban létrehozott vagy létező specifikus csoport nevét, amelyre az SSPR beállítás alkalmazni kívánt.
+
+3. Lépés: Autentikációs módszerek beállítása
+
+    A "Hogyan legyenek az emberek képesek azonosítani magukat?" (How should people prove who they are?) szakaszban
+    válassza ki az egyetlen kívánt autentikációs módszert.
+
+    Jelölje be a "Mobiltelefon" és/vagy "Mobilalkalmazás kód" opciót.
+
+    Ezzel a lépéssel engedélyezi, hogy a felhasználók a mobiltelefon számukon keresztül vagy
+    egy mobilalkalmazáson keresztül generált kódot használva igazolják magukat a jelszó visszaállítása során.
+
+    Kattintson a "Mentés" (Save) gombra a változtatások alkalmazásához.
+
+4. Lépés: SSPR tesztelése
+
+    Ellenőrizze, hogy a felhasználó képes-e az autentikációs módszert használva visszaállítani a jelszavát.
