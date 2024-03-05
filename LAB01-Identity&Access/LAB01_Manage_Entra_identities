@@ -9,7 +9,7 @@ Előfeltételek:
 
 Labor scenario:
 
-A vállalatod egy új tesztkörnyezet épít a bevezetésre szánt új alkalmazásoknak és szolgáltatásoknak. 
+A vállalatod egy új tesztkörnyezetet épít a bevezetésre szánt új alkalmazásoknak és szolgáltatásoknak. 
 Néhány mérnököt felvettek arra a célra, hogy menedzseljék ezt a labor környezetet, beleértve a virtuális gépeket is.
 
 Ahhoz, hogy a mérnökök autentikálni tudjanak az Entra ID-ba, azt a feladatot osztották ki Neked, hogy hozz létre nekik felhasználói fiókokat és csoportokat.
